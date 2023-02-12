@@ -1,0 +1,9 @@
+{
+  "appId": "www.tsa.cinema",
+  "appName": "Cinema",
+  "bundleWebRuntime": false,
+  "npmClient": "npm",
+  "webDir": "www",
+  "cordova": {}
+
+}

@@ -1,0 +1,70 @@
+<ion-header>
+  <ion-toolbar>
+
+    <ion-buttons slot="start">
+      <ion-menu-button></ion-menu-button>
+    </ion-buttons>
+
+    <ion-buttons slot="start">
+    <ion-back-button color="secondary" defaultHref="/movies"> </ion-back-button>
+  </ion-buttons>
+    <ion-title color="secondary">O NAMA</ion-title>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content #pageTop>
+
+ <h1><b>MOVIESTAR SRBIJA</b> </h1>
+  <ion-grid>
+    <ion-row>
+    <ion-col><ion-img  src="https://slike.cinestarcinemas.rs/resize2.php?filename=Ostalo/virtualtour%2FCZR%2FSALA/D7D_1240.jpg&width=360&height=360&mode=crop"> </ion-img></ion-col>
+    <ion-col><ion-img src="https://slike.cinestarcinemas.rs/resize2.php?filename=Ostalo/virtualtour%2FCZR%2FSALA/D7D_1300.jpg&width=360&height=360&mode=crop"></ion-img></ion-col>
+    <ion-col><ion-img src="https://slike.cinestarcinemas.rs/resize2.php?filename=Ostalo/virtualtour%2FCZR%2FSALA/D7D_1319.jpg&width=360&height=360&mode=crop"></ion-img></ion-col>
+  </ion-row>
+    <ion-row>
+      <ion-col><ion-img  src="https://slike.cinestarcinemas.rs/resize2.php?filename=Ostalo/virtualtour%2FCZR%2FBLAGAJNE/D7D_1512.jpg&width=360&height=360&mode=crop"> </ion-img></ion-col>
+      <ion-col><ion-img src="https://slike.cinestarcinemas.rs/resize2.php?filename=Ostalo/virtualtour%2FCZR%2FHOL/D7D_1449.jpg&width=360&height=360&mode=crop"></ion-img></ion-col>
+      <ion-col><ion-img src="https://slike.cinestarcinemas.rs/resize2.php?filename=Ostalo/virtualtour%2FCZR%2FHOL/D7D_1438.jpg&width=360&height=360&mode=crop"></ion-img></ion-col>
+
+    </ion-row>
+  </ion-grid>
+
+  <p>Kompanija Blitz-MovieStar 2015. godine otvara prvi multipleks u Srbiji. MovieStar Srbija predstavlja jedan potpuno novi
+  koncept bioskopa sa samo jednom salom koja je opremljena po svetskim standardima.
+    U sali je raspoloživo cak 100 mesta. MovieStar u Srbiji publici nudi najsuperiornije bioskopske formate: 4DX, RealD 3D digitalnu tehnologiju, eXtreme dvorane i 3D zvuk.
+    Gigantska „Wall to Wall“ i „Floor to Ceiling“ filmska platna, amfiteatarski raspored sedišta, koja obezbeđuje kristalno jasnu sliku i ton,
+    neke su od najvažnijih karakteristika superiornosti MovieStar multipleksa. </p>
+<h2><b>
+  NAŠA VIZIJA
+</b></h2>
+  <p> Biti najbolji i najveći bioskopski lanac u regiji koji će biti standard i merilo kvaliteta i profesionalnosti u svim segmentima poslovanja - posetiocima prvi izbor za bioskop, zaposlenima poželjan poslodavac, poslovnim subjektima pouzdan partner i društveno odgovorna kompanija.
+  </p>
+  <h2><b> NAŠA MISIJA</b></h2>
+  <p> Pružiti svakom posetiocu najbolju vrednost za novac kroz vrhunsku uslugu i zadovoljstvo i omogućiti uvek najbolji i najveći izbor filmova, u tehnološki superiornim dvoranama i najudobnijim sedištima, uvek konstantan kvalitet bioskopa s pet zvezdica. Vrednosti na kojima zasnivamo naš dugogodišnji uspeh su kvalitet, uslužnost, poverenje, inovativnost i razumevanje potreba naših posetilaca.
+</p>
+  <ion-footer>
+    <ion-card-header>
+      <ion-card-title><b>Kontakt</b></ion-card-title>
+    </ion-card-header>
+
+    <ion-card-content>
+     <ion-grid>
+       <ion-row>Adresa: Požeška 83a 11030 Beograd</ion-row>
+       <ion-row>Informacije i rezervacije:
+       (011) 254 52 60</ion-row>
+
+       <ion-row>Kontakt e-mail:
+         office@rodacineplex.com</ion-row>
+       <ion-row>Radno Vreme:09-23h</ion-row>
+     </ion-grid>
+
+    </ion-card-content>
+  </ion-footer>
+  <ion-fab vertical="bottom" horizontal="end" slot="fixed">
+    <ion-fab-button color="danger" (click)="pageScroller()" >
+
+      <ion-icon name="arrow-up-circle-outline"></ion-icon>
+    </ion-fab-button>
+  </ion-fab>
+
+</ion-content>

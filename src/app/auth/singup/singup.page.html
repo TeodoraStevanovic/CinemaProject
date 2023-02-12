@@ -1,0 +1,32 @@
+<ion-header>
+  <ion-toolbar>
+    <ion-buttons slot="start">
+      <ion-back-button color="secondary" defaultHref="/login"> </ion-back-button>
+    </ion-buttons>
+    <ion-title color="secondary" >Register</ion-title>
+    </ion-toolbar>
+</ion-header>
+<ion-content>
+  <h2><b>Create your account here</b></h2>
+
+  <form [formGroup]="registerForm" (ngSubmit)="onRegister()"  >
+
+
+    <ion-item>
+      <ion-input placeholder="Name" type="text" formControlName="name"></ion-input>
+    </ion-item>
+    <ion-item>
+      <ion-input placeholder="Surname" type="text" formControlName="surname"></ion-input>
+    </ion-item>
+    <ion-item>
+      <ion-input placeholder="Email" type="email" formControlName="email"></ion-input>
+    </ion-item>
+    <ion-item class="items" lines="none" *ngIf="registerForm.get('email').invalid && registerForm.get('email').touched">Loš format!</ion-item>
+    <ion-item>
+      <ion-input placeholder="Password" type="password" formControlName="password"></ion-input>
+    </ion-item>
+    <ion-item class="items" lines="none" *ngIf="registerForm.get('password').invalid && registerForm.get('password').touched">Lozinka mora da ima bar 8 karaktera!</ion-item>
+    <ion-button type="submit" color="secondary" shape="round" expand="block" [disabled]="registerForm.invalid">Sign up</ion-button>
+  </form>
+
+</ion-content>

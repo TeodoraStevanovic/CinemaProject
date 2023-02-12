@@ -1,0 +1,91 @@
+<ion-app>
+  <ion-menu side="start" contentId="main" menuId="adminMenu" *ngIf="authService.currentUser?.email==='admin@admin.com'">
+    <ion-header>
+      <ion-toolbar>
+        <ion-title color="tertiary">Moviestar</ion-title>
+      </ion-toolbar>
+    </ion-header>
+    <ion-content>
+      <ion-list lines="none">
+
+        <ion-menu-toggle>
+          <ion-item routerLink="/movies">
+            <ion-icon name="document-text" slot="start" color="secondary"></ion-icon>
+            <ion-label>Repertoar</ion-label>
+          </ion-item>
+        </ion-menu-toggle>
+
+        <ion-menu-toggle>
+          <ion-item routerLink="/admin-users">
+            <ion-icon name="people" slot="start" color="secondary"></ion-icon>
+            <ion-label>Korisnici</ion-label>
+          </ion-item>
+        </ion-menu-toggle>
+
+        <ion-menu-toggle>
+          <ion-item routerLink="/admin-reservations">
+            <ion-icon name="ticket" slot="start" color="secondary"></ion-icon>
+            <ion-label>Rezervacije</ion-label>
+          </ion-item>
+        </ion-menu-toggle>
+
+        <ion-menu-toggle>
+          <ion-item (click)="logout()">
+            <ion-icon name="log-out" slot="start" color="secondary"></ion-icon>
+            <ion-label>Odjavi se</ion-label>
+          </ion-item>
+        </ion-menu-toggle>
+        <ion-item>
+          <ion-icon name="contrast-outline" color="secondary" slot="start"></ion-icon>
+          <ion-label>Dark mode</ion-label>
+          <ion-toggle (ionChange)="toggleTheme($event)"></ion-toggle>
+        </ion-item>
+      </ion-list>
+    </ion-content>
+  </ion-menu>
+
+  <ion-menu side="start" contentId="main" menuId="userMenu" *ngIf="authService.currentUser?.email!=='admin@admin.com'">
+    <ion-header>
+      <ion-toolbar>
+        <ion-title color="tertiary">Moviestar</ion-title>
+      </ion-toolbar>
+    </ion-header>
+    <ion-content>
+      <ion-list lines="none">
+        <ion-menu-toggle>
+          <ion-item routerLink="/kontakt">
+            <ion-icon name="accessibility-outline" color="secondary" slot="start"></ion-icon>
+            <ion-label>O nama</ion-label>
+          </ion-item>
+        </ion-menu-toggle>
+        <ion-menu-toggle>
+          <ion-item routerLink="/movies">
+            <ion-icon name="document-text" slot="start" color="secondary"></ion-icon>
+            <ion-label>Repertoar</ion-label>
+          </ion-item>
+        </ion-menu-toggle>
+        <ion-menu-toggle>
+          <ion-item routerLink="/cenovnik">
+            <ion-icon name="pricetag-outline" color="secondary" slot="start"></ion-icon>
+            <ion-label>Cenovnik</ion-label>
+          </ion-item>
+        </ion-menu-toggle>
+
+        <ion-menu-toggle>
+          <ion-item (click)="logout()">
+            <ion-icon name="log-out" slot="start" color="secondary"></ion-icon>
+            <ion-label>Odjavi se</ion-label>
+          </ion-item>
+        </ion-menu-toggle>
+        <ion-item>
+          <ion-icon name="contrast-outline" color="secondary" slot="start"></ion-icon>
+          <ion-label>Dark mode</ion-label>
+          <ion-toggle (ionChange)="toggleTheme($event)"></ion-toggle>
+        </ion-item>
+      </ion-list>
+    </ion-content>
+  </ion-menu>
+
+  <ion-router-outlet id="main"></ion-router-outlet>
+
+</ion-app>

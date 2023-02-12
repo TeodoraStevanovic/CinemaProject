@@ -1,0 +1,43 @@
+ion-content {
+  --background: none;
+  background-image: url("https://i.pinimg.com/564x/8c/f2/07/8cf207cffd6de8ba3d9922c6bd7703d0.jpg");
+  background-position: center top;
+  background-repeat: no-repeat;
+  background-size: cover;
+  background-color: #ff5b71;
+
+}
+ion-title{
+  justify-content: center;
+}
+ion-input{
+  border: 2px solid #c99c84;
+  --background:#ffffff;
+  color: rgba(7, 0, 0, 0.95);
+  margin-top: 15px;
+  margin-left: 35px;
+  margin-right: 35px;
+  font-size: 18px;
+  --padding-bottom: 10px;
+  --padding-start: 20px;
+  --padding-top: 20px;
+}
+ion-button{
+  margin-top:15%;
+  margin-right: 35px;
+  margin-left: 35px;
+}
+h2{
+  color: #c99c84;
+  text-align: center;
+}
+ion-item{
+  --background: none;
+}
+.items{
+  margin-left: 10%;
+  font-size: 2vh;
+  color: grey;
+  margin-top: -7px;
+
+}

@@ -1,0 +1,28 @@
+<ion-header>
+  <ion-toolbar>
+    <ion-title color="secondary">Login</ion-title>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content>
+  <img alt="naslovna" src="https://i.pinimg.com/564x/25/67/42/256742663981884e227ccbcf123320bf.jpg">
+  <form #LoginForm="ngForm" (ngSubmit)="onLogin(LoginForm)">
+        <ion-grid>
+
+            <ion-item>
+  <ion-input  placeholder="Email" type="email" ngModel name="email" required="true" email #email="ngModel"></ion-input></ion-item>
+            <ion-item class="items" lines="none" *ngIf="email.invalid && email.touched">Email adresa nije validna!</ion-item>
+            <ion-item>
+            <ion-input placeholder="Password" type="password" ngModel name="password" required="true" minlength="8" #password="ngModel" >
+              </ion-input>
+            </ion-item>
+            <ion-item class="items" lines="none" *ngIf="password.invalid && password.touched">Lozinka mora da ima bar 8 karaktera!</ion-item>
+
+<div class="ion-text-center"><ion-spinner  name="bubbles" color="secondary" *ngIf="isLoading"></ion-spinner></div>
+   <ion-button type="submit" color="primary" shape="round" expand="block" [disabled]="LoginForm.invalid" >Login</ion-button>
+        </ion-grid> </form>
+          <div class="maliTekst"><ion-text  >Don't have an account?</ion-text></div>
+   <ion-button routerLink="/singup" color="secondary" shape="round" expand="block">Sign up</ion-button>
+
+
+ </ion-content>

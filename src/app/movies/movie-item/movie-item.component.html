@@ -1,0 +1,18 @@
+<ion-item-sliding xmlns="http://www.w3.org/1999/html">
+  <ion-item  [routerLink]="['', 'movies', 'tabs', 'repertoire', movieItem.id]">
+
+    <ion-img style="height: 250px; width: 150px"  [src]="movieItem.imageUrl"></ion-img>
+
+    <ion-card style="height: 150px;width: 80%; box-shadow: none">
+      <ion-card-content></ion-card-content>
+    <ion-card-title>{{movieItem.name}}</ion-card-title>
+      <ion-card-content></ion-card-content>
+    <ion-card-subtitle>{{movieItem.date | date: 'dd.MM.yyyy HH:mm'}}</ion-card-subtitle>
+    </ion-card>
+
+    <ion-button style="height: 50px; width: 50px" (click)="onDeleteMovie(movieItem)" *ngIf="authService.currentUser?.email==='admin@admin.com'">
+      <ion-icon name="trash-outline" slot="icon-only" style="color: #FFFFFF;"></ion-icon>
+    </ion-button>
+  </ion-item>
+
+</ion-item-sliding>

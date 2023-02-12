@@ -1,0 +1,20 @@
+ion-toolbar{
+  color: darkred;
+}
+ion-card-header{
+  --background: none;
+  background-color: #faf7f6;
+  color: darkred;
+}
+ion-card-title{
+  font-size: 8vw;
+}
+ion-content {
+  --background: none;
+  background-image: url("https://i.pinimg.com/564x/04/69/8b/04698b9216a107bfddc24413598f7574.jpg");
+  background-position: center top;
+  background-repeat: no-repeat;
+  background-size: cover;
+
+}
+

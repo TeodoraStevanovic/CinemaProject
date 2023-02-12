@@ -1,0 +1,156 @@
+<ion-header>
+  <ion-toolbar>
+    <ion-buttons slot="start">
+      <ion-back-button defaultHref="/movies" color="tertiary"></ion-back-button>
+    </ion-buttons>
+    <ion-title color="secondary">Dodaj novi film</ion-title>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content>
+  <ion-card class="ion-no-margin">
+    <ion-card-header>
+      <ion-card-title>
+        Novi film
+      </ion-card-title>
+
+      <ion-card-subtitle>
+        Popunjavanjem forme u nastavku možete da dodate novi film u repertoar
+      </ion-card-subtitle>
+    </ion-card-header>
+
+    <ion-card-content>
+      <form [formGroup]="addMovie" (ngSubmit)="onAddMovie()">
+        <ion-grid>
+          <ion-row>
+            <ion-col size-sm="6" offset-sm="3">
+              <ion-item>
+                <ion-label position="floating">Naziv</ion-label>
+                <ion-input type="text" name="name" formControlName="name" required></ion-input>
+              </ion-item>
+
+             <div>
+                <ng-container *ngFor="let validation of validationMessage.name">
+                  <small
+                    *ngIf="addMovie.get('name').hasError(validation.type) &&
+                  (addMovie.get('name').dirty ||
+                  addMovie.get('name').touched)">
+                    {{validation.message}}
+                  </small>
+                </ng-container>
+              </div>
+
+              <ion-item>
+                <ion-label position="floating">Opis radnje</ion-label>
+                <ion-textarea rows="6" type="text" name="description" formControlName="description" required></ion-textarea>
+              </ion-item>
+
+              <div>
+                <ng-container *ngFor="let validation of validationMessage.description">
+                  <small
+                    *ngIf="addMovie.get('description').hasError(validation.type) &&
+                  (addMovie.get('description').dirty ||
+                  addMovie.get('description').touched)">
+                    {{validation.message}}
+                  </small>
+                </ng-container>
+              </div>
+
+              <ion-item>
+                <ion-label position="floating">Datum</ion-label>
+                <ion-datetime type="text" displayFormat="MMM DD, YYYY HH:mm" min="2022-06-15" cancelText="Nazad" doneText="Izaberi" name="date" formControlName="date" required></ion-datetime>
+              </ion-item>
+              <script>
+                const datetime = document.querySelector('ion-datetime');
+                datetime.isDateEnabled = function(dateIsoString) {
+                  const date=new Date();
+
+                  return true;
+                }
+              </script>
+              <div>
+                <ng-container *ngFor="let validation of validationMessage.date">
+                  <small
+                    *ngIf="addMovie.get('date').hasError(validation.type) &&
+                  (addMovie.get('date').dirty ||
+                  addMovie.get('date').touched)">
+                    {{validation.message}}
+                  </small>
+                </ng-container>
+              </div>
+
+              <ion-item>
+                <ion-label position="floating">Trajanje filma</ion-label>
+                <ion-input type="text" name="duration" formControlName="duration" required></ion-input>
+              </ion-item>
+
+             <div>
+                <ng-container *ngFor="let validation of validationMessage.duration">
+                  <small
+                    *ngIf="addMovie.get('duration').hasError(validation.type) &&
+                  (addMovie.get('duration').dirty ||
+                  addMovie.get('duration').touched)">
+                    {{validation.message}}
+                  </small>
+                </ng-container>
+              </div>
+
+              <ion-item>
+                <ion-label position="floating">Broj dostupnih sedišta</ion-label>
+                <ion-input type="number" name="seats" formControlName="seats" min="0" aria-valuemin="0" max="100" aria-valuemax="100" required></ion-input>
+              </ion-item>
+
+              <div>
+                <ng-container *ngFor="let validation of validationMessage.seats">
+                  <small
+                    *ngIf="(addMovie.get('seats').hasError(validation.type) &&
+                  (addMovie.get('seats').dirty ||
+                  addMovie.get('seats').touched) )|| addMovie.get('seats').value>100">
+                    {{validation.message}}
+                  </small>
+                </ng-container>
+              </div>
+
+              <ion-item>
+                <ion-label position="floating">Glavne uloge</ion-label>
+                <ion-textarea rows="6" name="actors" formControlName="actors" required></ion-textarea>
+              </ion-item>
+
+              <div>
+                <ng-container *ngFor="let validation of validationMessage.actors">
+                  <small
+                    *ngIf="addMovie.get('actors').hasError(validation.type) &&
+                  (addMovie.get('actors').dirty ||
+                  addMovie.get('actors').touched)">
+                    {{validation.message}}
+                  </small>
+                </ng-container>
+              </div>
+
+              <ion-item>
+                <ion-label position="floating">Slika</ion-label>
+                <ion-input type="text" name="imageUrl" formControlName="imageUrl" required></ion-input>
+              </ion-item>
+
+            <div>
+                <ng-container *ngFor="let validation of validationMessage.imageUrl">
+                  <small
+                    *ngIf="addMovie.get('imageUrl').hasError(validation.type) &&
+                  (addMovie.get('imageUrl').dirty ||
+                  addMovie.get('imageUrl').touched)">
+                    {{validation.message}}
+                  </small>
+                </ng-container>
+              </div>
+
+            </ion-col>
+          </ion-row>
+        </ion-grid>
+
+        <div class="sign-btn-wrap">
+          <ion-button type="submit" shape="round" fill="solid" class="sign-btn"[disabled]="!addMovie.valid" >Sačuvaj</ion-button>
+        </div>
+      </form>
+    </ion-card-content>
+  </ion-card>
+</ion-content>

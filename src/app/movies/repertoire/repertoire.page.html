@@ -1,0 +1,16 @@
+<ion-header>
+  <ion-toolbar>
+    <ion-buttons slot="start">
+      <ion-menu-button color="secondary"></ion-menu-button>
+    </ion-buttons>
+    <ion-title color="secondary">Repertoar</ion-title>
+  </ion-toolbar>
+</ion-header>
+<style></style>
+<ion-content>
+  <ion-searchbar class="search" style="width: 100%" [(ngModel)]="searchTerm" showCancelButton="focus" animated placeholder="Pretraga filmova" ></ion-searchbar>
+  <ion-list>
+    <app-movie-item *ngFor="let movie of movies | filter:searchTerm" [movieItem]="movie"></app-movie-item>
+  </ion-list>
+</ion-content>
+
